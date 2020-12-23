@@ -147,7 +147,9 @@ def process(args):
 
     target_domains = get_domains(args.targets)
     authoritative_dns = get_authoritative_dns_servers(target_domains)
-    trusted_dns = get_domains(os.path.join("configs", "trusted_nameservers.conf"))
+    config_dir = os.path.join(os.path.dirname(__file__), "configs")
+    config_file = os.path.join(config_dir, "trusted_nameservers.conf")
+    trusted_dns = get_domains(config_file)
 
     ascii_reps = {}
     file = open(file_path_output, "r", encoding="utf-8")

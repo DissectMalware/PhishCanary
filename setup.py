@@ -57,6 +57,6 @@ setup(
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
     package_data={
-        'PhishCanary': ['configs\\trusted_nameservers.conf']},
+        'PhishCanary': ['configs/trusted_nameservers.conf']},
 
 )
