@@ -74,7 +74,7 @@ optional arguments:
                         Specify a TLD zone file path
   -t FILE_PATH, --targets FILE_PATH
                         Specify a file containing target domain names
-  -s, --sorted          Determine whether the lines in the input are sorted
+  -u, --unsorted          Determine whether the lines in the input are unsorted
 
 ```
 
