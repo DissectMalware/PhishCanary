@@ -165,6 +165,7 @@ def process(args):
 
     for target_domain in target_domains:
         target_domain = tldextract.extract(target_domain).domain
+        print('target,ascii,unicode,punycode,NS record')
         for domain in ascii_reps:
             min_dist = calc_min_distance(domain, target_domain)
             rec = ascii_reps[domain][-1]
