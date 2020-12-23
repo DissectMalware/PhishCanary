@@ -142,7 +142,18 @@ def process(args):
     file_path = args.zonefile
     file_path_output = file_path + ".dmp"
 
-    if os.path.isfile(file_path_output) is False:
+    dump_idns = True
+
+    if os.path.isfile(file_path_output):
+        print("{} dump file exists".format(file_path_output))
+        print("Do you want to dump IDNs again? (Y or N)")
+        choice = input()
+        if choice.lower() in ["y","yes"]:
+            dump_idns = True
+        else:
+            dump_idns = False
+
+    if dump_idns:
         dump_punycode_domains(file_path, file_path_output, is_sorted=not args.unsorted)
 
     target_domains = get_domains(args.targets)
