@@ -143,7 +143,7 @@ def process(args):
     file_path_output = file_path + ".dmp"
 
     if os.path.isfile(file_path_output) is False:
-        dump_punycode_domains(file_path, file_path_output, is_sorted=args.sorted)
+        dump_punycode_domains(file_path, file_path_output, is_sorted=not args.unsorted)
 
     target_domains = get_domains(args.targets)
     authoritative_dns = get_authoritative_dns_servers(target_domains)
@@ -162,7 +162,7 @@ def process(args):
         ascii_reps[ascii_rep].append((rest[0], rest[1], rest[2], name_server))
 
     potential_phish = {}
-    
+
     print('target,ascii,unicode,punycode,NS record')
     for target_domain in target_domains:
         target_domain = tldextract.extract(target_domain).domain
@@ -223,7 +223,7 @@ def main():
                             help="Specify a TLD zone file path", metavar=('FILE_PATH'))
     arg_parser.add_argument("-t", "--targets", type=str, action='store',
                             help="Specify a file containing target domain names", metavar=('FILE_PATH'))
-    arg_parser.add_argument("-s", "--sorted", default=True, action='store_true',
+    arg_parser.add_argument("-u", "--unsorted", default=False, action='store_true',
                             help="Determine whether the lines in the input are sorted")
 
     args = arg_parser.parse_args()
