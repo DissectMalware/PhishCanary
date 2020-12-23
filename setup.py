@@ -8,7 +8,7 @@ except ImportError:
 
 project_dir = os.path.abspath(os.path.dirname(__file__))
 
-with open(os.path.join(project_dir, 'README.md')) as f:
+with open(os.path.join(project_dir, 'README.md'),"r", encoding='utf-8') as f:
     long_description = f.read()
 
 entry_points = {
