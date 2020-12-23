@@ -66,7 +66,7 @@ Sample ouput can be found https://pastebin.com/waYKKd1H
 
 PhishCanary(v0.1.0) - https://github.com/DissectMalware/PhishCanary
 
-usage: extractor.py [-h] [-f FILE_PATH] [-t FILE_PATH] [-s]
+usage: extractor.py [-h] [-f FILE_PATH] [-t FILE_PATH] [-u]
 
 optional arguments:
   -h, --help            show this help message and exit
