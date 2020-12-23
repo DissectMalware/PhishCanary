@@ -162,10 +162,11 @@ def process(args):
         ascii_reps[ascii_rep].append((rest[0], rest[1], rest[2], name_server))
 
     potential_phish = {}
-
+    
+    print('target,ascii,unicode,punycode,NS record')
     for target_domain in target_domains:
         target_domain = tldextract.extract(target_domain).domain
-        print('target,ascii,unicode,punycode,NS record')
+
         for domain in ascii_reps:
             min_dist = calc_min_distance(domain, target_domain)
             rec = ascii_reps[domain][-1]
