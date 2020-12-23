@@ -10,8 +10,6 @@ PhishCanary filters out the IDNs created by the target domain names' authoritati
 
 ```
 pip install -U https://github.com/DissectMalware/PhishCanary/archive/master.zip
-pip install -U https://github.com/DissectMalware/pyxlsb2/archive/master.zip
-pip install -U https://github.com/DissectMalware/XLMMacroDeobfuscator/archive/master.zip
 ```
 
 # Running PhishCanary
